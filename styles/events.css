@@ -1,0 +1,213 @@
+/* ===== Intro highlights ===== */
+
+.event-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2.5rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.event-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  color: var(--color-accent);
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.stat-label {
+  color: var(--color-muted);
+  font-size: 0.875rem;
+}
+
+.jump-link {
+  color: var(--color-navy);
+  font-weight: 600;
+}
+
+/* ===== 12-column card grid ===== */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+/* Mobile first: every card spans the full grid until a breakpoint makes room for more per row. */
+.conference-card,
+.meetup-card {
+  grid-column: span 12;
+}
+
+@media (min-width: 30rem) {
+  .meetup-card {
+    grid-column: span 6;
+  }
+}
+
+@media (min-width: 48rem) {
+  .conference-card {
+    grid-column: span 6;
+  }
+
+  .meetup-card {
+    grid-column: span 4;
+  }
+}
+
+@media (min-width: 64rem) {
+  .conference-card {
+    grid-column: span 4;
+  }
+
+  .meetup-card {
+    grid-column: span 3;
+  }
+}
+
+/* ===== Event card ===== */
+
+.event-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+  background-color: var(--color-surface);
+  box-shadow: 0 1px 3px rgba(19, 41, 75, 0.08);
+}
+
+/* Highlights the card a visitor jumped to from the guide's calendar links. */
+.event-card:target {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent);
+}
+
+.meetup-card {
+  gap: 0.75rem;
+  padding: 1.25rem;
+}
+
+.card-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.date-badge {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: center;
+  width: 3.75rem;
+  margin: 0;
+  padding: 0.5rem 0;
+  border-radius: 0.5rem;
+  background-color: var(--color-navy);
+  color: var(--color-on-dark);
+  line-height: 1.1;
+}
+
+.date-month {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.date-day {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.event-type {
+  margin: 0;
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.event-title {
+  margin: 0.25rem 0 0;
+  color: var(--color-navy);
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+.meetup-card .event-title {
+  font-size: 1.0625rem;
+}
+
+.event-summary {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.event-details {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.25rem 0.75rem;
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+.detail-label {
+  color: var(--color-muted);
+  font-weight: 700;
+}
+
+.detail-value {
+  margin: 0;
+}
+
+.topic-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.topic-tag {
+  padding: 0.125rem 0.625rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-navy-soft);
+  color: var(--color-navy);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+/* Pushes the button to the bottom so buttons line up across a row of unequal cards. */
+.card-action {
+  margin: auto 0 0;
+  padding-top: 0.5rem;
+}
+
+/* ===== Guide teaser ===== */
+
+.guide-teaser {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  padding: 2rem;
+  border-left: 6px solid var(--color-accent);
+  border-radius: var(--radius-card);
+  background-color: var(--color-navy-soft);
+}
+
+.teaser-text {
+  max-width: 40rem;
+  margin: 0.5rem 0 0;
+}
